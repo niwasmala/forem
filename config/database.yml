@@ -22,6 +22,8 @@ default: &default
   pool: <%= ENV.fetch("DATABASE_POOL_SIZE") { ENV.fetch("RAILS_MAX_THREADS", 5).to_i } %>
   connect_timeout: 2
   checkout_timeout: 2
+  prepared_statements: false
+  advisory_locks: false
   variables:
       statement_timeout: <%= ENV.fetch("STATEMENT_TIMEOUT", 2500).to_i %>
 
